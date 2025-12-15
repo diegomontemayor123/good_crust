@@ -42,7 +42,7 @@ export default function FlowChart() {
      { lane: 'DOSS', label: 'Production & Orders', y: lanes[1].y + 15, width: 140, height: 20, fill:'#1e40af',arrowRight:'Orders (EDI)', flowType:'edi', arrowRightDx:-30 },
      { lane: 'Shopify & Wholesale', label: 'Shopify', labelSplit: 'Wholesale', y: lanes[4].y + 15, width: 140, height: 20, fill:'#1e293b' }],
     [{ lane: '3PLs (JackRabbit & Kratos)', label: 'JackRabbit', labelSplit: 'Kratos', y: lanes[2].y + 15, width: 160, height: 20, arrowLeft:'FO (EDI)', arrowLeftDx:35, arrowRight:'Tracking (SLA: ≤24hr)',arrowRightDy:-11, arrowRightDx: -35, flowType:'edi' },
-     { lane: 'DOSS', label: 'Fulfillment & Confirmation', y: lanes[1].y + 15, width: 140, height: 20, arrowRight:'Invoice/Receipt (API)', arrowRightDx:52, arrowLeft:'QBO Sync (API)', arrowLeftDx: 0, arrowLeftDy: 60, fill:'#1e40af', flowType:'api' },],
+     { lane: 'DOSS', label: 'Fulfillment & Confirmation', y: lanes[1].y + 15, width: 140, height: 20, arrowRight:'Summarized Ops (API)', arrowRightDx:60, arrowLeft:'QBO Sync (API)', arrowLeftDx: 0, arrowLeftDy: 60, fill:'#1e40af', flowType:'api' },],
     [{ lane: 'QuickBooks Online', label: 'Financial Events Sync (live)', y: lanes[3].y + 15, width: 140, height: 20, fill:'#d97706', stroke:'#f59e0b' }]
   ];
 

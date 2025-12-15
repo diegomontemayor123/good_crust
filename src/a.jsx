@@ -34,9 +34,9 @@ export default function PartA() {
       </div>
       <div className="grid grid-cols-4 gap-4 mb-6">
         <ProcessBox step="1" title="Procurement" flows={{goods:['DOSS forecasts raw material needs.'], data:['DOSS generates Purchase Order.','PO sent to Co-Packer (PDF / CSV).'], money:['PO is a spending commitment (Future AP).']}}/>
-        <ProcessBox step="2" title="Production" flows={{goods:['Co-packer produces and ships goods to 3PLs.'], data:['Co-packer sends Production Report (Excel).','DOSS allocates inventory based off of orders from Shopify & Wholesale (EDI) and handles exceptions.','DOSS receives orders from Shopify & Wholesale via EDI.'], money:['Co-packer Invoice received (Accounts Payable).',' DTC Pmt Authorized & Wholesale Pmt terms established.']}}/>
+        <ProcessBox step="2" title="Production" flows={{goods:['Co-packer produces and ships goods to 3PLs.'], data:['Co-packer sends Production Report (Excel).','DOSS receives orders from Shopify & Wholesale via EDI.','DOSS allocates inventory and handles exceptions.',], money:['Co-packer Invoice received (Accounts Payable).',' DTC Pmt Authorized & Wholesale Pmt terms established.']}}/>
         <ProcessBox step="3" title="Fulfillment" flows={{goods:['3PL picks, packs, and ships the product to customers.'], data:['DOSS sends Fulfillment Order to 3PL (EDI).','3PL sends Tracking back to DOSS (SLA: ≤24hr).','DOSS updates Inventory (-Qty).'], money:['Shipping costs recorded on a monthly basis.']}}/>
-        <ProcessBox step="4" title="Accounting" flows={{goods:['Satisfied customers have physical goods.'], data:['DOSS sends Invoice / Receipt (API).','DOSS syncs Journal Entries to QBO (API).'], money:['DTC: Payment reconciled in QBO.','Wholesale: AR created in QBO. Payment received later.','DOSS changes inventory asset to COGS and syncs journal to QBO.']}}/>
+        <ProcessBox step="4" title="Accounting" flows={{goods:['Satisfied customers have physical goods.'], data:['DOSS sends summarized Ops (API).','DOSS syncs Journal Entries to QBO (API).'], money:['DTC: Payment reconciled in QBO.','Wholesale: AR created in QBO. Payment received later.','DOSS changes inventory asset to COGS.']}}/>
       </div>
       <div className="grid md:grid-cols-2 gap-4">
         <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700">
@@ -67,7 +67,7 @@ export default function PartA() {
               <span className="text-red-400 font-bold">•</span>
               <div>
                 <strong>Wholesale Chargebacks:</strong>
-                <p className="text-slate-500 text-xs">Target & UNFI have strict EDI windows. A DOSS API outage could miss one of these window, which could result in chargebacks or other penalties.</p>
+                <p className="text-slate-500 text-xs">Target & UNFI have strict EDI windows. A DOSS API outage could miss one of these windows, which could result in chargebacks or other penalties.</p>
               </div>
             </li>
           </ul>
@@ -89,7 +89,7 @@ export default function PartA() {
             <div className="bg-slate-900 p-3 rounded border-l-4 border-blue-500">
               <div className="text-xs font-bold text-blue-500 uppercase mb-1">Walk (Month 3)</div>
               <h4 className="font-bold text-sm">Lightweight Vendor Portal</h4>
-              <p className="text-xs text-slate-400 mt-1">Co-packer logs into a restricted DOSS view to input "Production Complete" quantities only in near real-time.</p>
+              <p className="text-xs text-slate-400 mt-1">Co-packer logs into a restricted DOSS view to input "Production Complete" quantities only (in near real-time).</p>
             </div>
             <div className="bg-slate-900 p-3 rounded border-l-4 border-purple-500">
               <div className="text-xs font-bold text-purple-500 uppercase mb-1">Run (Year 1)</div>
