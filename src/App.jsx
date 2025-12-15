@@ -3,8 +3,17 @@ import PartA from './a';
 import PartB from './b';
 import PartC from './c';
 
+const PW="goodcrust2025"
+
+
+
 export default function GoodCrustCaseStudy() {
-  const [activeTab, setActiveTab] = useState('partA');
+
+    const [ok,setOk]=useState(sessionStorage.ok==="1"),[pw,setPw]=useState(""),[activeTab,setActiveTab]=useState("partA")
+    if(!ok)return<div className="min-h-screen flex items-center justify-center bg-slate-950 text-slate-100"><div className="bg-slate-900 p-6 rounded-xl border border-slate-800"><div className="text-sm text-slate-400 mb-2">Password</div><input type="password" className="bg-slate-800 p-2 rounded mr-2"/><button onClick={e=>{const v=e.currentTarget.previousSibling.value;v===PW&&(sessionStorage.ok="1",setOk(true))}} className="bg-blue-600 px-3 py-2 rounded">Enter</button></div></div>
+
+
+  
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-blue-500/30">
